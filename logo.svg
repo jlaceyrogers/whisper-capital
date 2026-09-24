@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Whisper Capital mark: an abstract "W" of three ascending hairline chevrons
+       (rising chart / whisper waveform). Single-stroke geometry, mint-400 on transparent. -->
+  <g stroke="#66cc66" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M6 42 L16 30 L26 42 L36 26 L46 38 L58 18" />
+    <path d="M6 52 L16 40 L26 52 L36 36 L46 48 L58 28" opacity="0.55" />
+    <path d="M6 32 L16 20 L26 32 L36 16 L46 28 L58 8" opacity="0.3" />
+  </g>
+</svg>
