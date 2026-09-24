@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fiscal Forest design tokens */
+    --forest-1000: #001400;
+    --forest-950: #002200;
+    --forest-900: #003300;
+    --forest-800: #004d00;
+    --forest-700: #006600;
+    --forest-600: #008000;
+    --green-500: #009900;
+    --mint-400: #66cc66;
+    --mint-200: #99e699;
+    --mint-100: #ccffcc;
+    --ivory: #FAF7EF;
+    --ivory-dim: #F1EEE2;
+    --ink: #0B1A0B;
+    --ink-soft: #33473A;
+    --fog: #A8BFA9;
+
+    --hairline-dark: rgba(102, 204, 102, 0.14);
+    --hairline-light: rgba(0, 51, 0, 0.12);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+    /* shadcn compatibility tokens */
+    --background: 120 100% 10%;
+    --foreground: 0 0% 100%;
+    --card: 120 100% 15%;
+    --card-foreground: 0 0% 100%;
+    --popover: 120 100% 15%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 120 100% 30%;
+    --primary-foreground: 120 100% 4%;
+    --secondary: 120 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 120 20% 20%;
+    --muted-foreground: 112 16% 65%;
+    --accent: 120 30% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 120 30% 25%;
+    --input: 120 30% 25%;
+    --ring: 120 33% 40%;
+    --radius: 0.125rem;
+    --sidebar-background: 120 100% 8%;
+    --sidebar-foreground: 112 16% 65%;
+    --sidebar-primary: 120 100% 30%;
+    --sidebar-primary-foreground: 120 100% 4%;
+    --sidebar-accent: 120 30% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 120 30% 25%;
+    --sidebar-ring: 120 33% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  body {
+    @apply bg-forest-1000 text-white font-sans antialiased;
+    font-feature-settings: 'ss01' on;
+  }
+  .font-serif {
+    font-optical-sizing: auto;
+    font-variation-settings: 'SOFT' 100, 'WONK' 0;
+    font-feature-settings: 'dlig' on;
+  }
+  ::selection {
+    background: rgba(102, 204, 102, 0.25);
+    color: #ccffcc;
+  }
+  :focus-visible {
+    outline: 2px solid #66cc66;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .hairline-dark {
+    border-color: var(--hairline-dark);
+  }
+  .hairline-light {
+    border-color: var(--hairline-light);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
