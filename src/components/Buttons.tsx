@@ -127,7 +127,7 @@ export function SecondaryButton({
   arrow?: boolean
 }) {
   const cls = cn(
-    'group inline-flex items-center gap-3 rounded-[2px] border border-[rgba(102,204,102,0.4)] px-[34px] py-[18px] font-sans text-[0.85rem] font-semibold uppercase tracking-button text-mint-200 transition-all duration-500 ease-out-expo hover:border-mint-400 hover:bg-[rgba(102,204,102,0.08)]',
+    'group inline-flex items-center gap-3 rounded-[2px] border border-[rgba(212,172,82,0.4)] px-[34px] py-[18px] font-sans text-[0.85rem] font-semibold uppercase tracking-button text-mint-200 transition-all duration-500 ease-out-expo hover:border-mint-400 hover:bg-[rgba(212,172,82,0.08)]',
     className,
   )
   const inner = (

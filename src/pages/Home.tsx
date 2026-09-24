@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react'
 import Preloader from '@/components/Preloader'
 import Hero from '@/pages/home/Hero'
 import DualEngine from '@/pages/home/DualEngine'
-import ByTheNumbers from '@/pages/home/ByTheNumbers'
 
 export default function Home() {
   const [revealed, setRevealed] = useState(() => !!sessionStorage.getItem('whisper-preloaded'))
@@ -25,7 +24,6 @@ export default function Home() {
       {!revealed && <Preloader onDone={handleDone} />}
       <Hero revealed={revealed} />
       <DualEngine />
-      <ByTheNumbers />
     </>
   )
 }

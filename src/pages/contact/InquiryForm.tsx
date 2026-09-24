@@ -13,11 +13,10 @@ import { cn } from '@/lib/utils'
 
 const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number]
 
-const REGIONS = ['APAC', 'MIDDLE EAST', 'EUROPE'] as const
+const REGIONS = ['USA', 'APAC', 'MIDDLE EAST', 'EUROPE'] as const
 type Region = (typeof REGIONS)[number]
 
 const INVESTOR_TYPES = [
-  { id: 'FAMILY OFFICE', sub: 'Single & multi-family' },
   { id: 'QUALIFIED INDIVIDUAL', sub: 'Accredited investor' },
   { id: 'INSTITUTION', sub: 'Allocator / advisor' },
 ] as const
@@ -153,7 +152,7 @@ function Field({
           aria-hidden
           className={cn(
             'absolute bottom-0 left-0 h-px w-full transition-colors duration-300',
-            error ? 'bg-forest-700' : 'bg-[rgba(0,51,0,0.2)]',
+            error ? 'bg-forest-700' : 'bg-[rgba(16,28,46,0.2)]',
           )}
         />
         {/* focus accent — 2px, scaleY from center */}
@@ -258,7 +257,7 @@ export default function InquiryForm() {
         initial={reduced ? false : 'hidden'}
         whileInView="show"
         viewport={{ once: true, amount: 0.15 }}
-        className="mx-auto w-full max-w-[880px] rounded-[2px] border border-[rgba(0,51,0,0.12)] bg-ivory-dim p-7 md:p-16"
+        className="mx-auto w-full max-w-[880px] rounded-[2px] border border-[rgba(16,28,46,0.12)] bg-ivory-dim p-7 md:p-16"
       >
         <AnimatePresence mode="wait">
           {status === 'success' ? (
@@ -311,7 +310,7 @@ export default function InquiryForm() {
               {/* card header — document reference */}
               <motion.div
                 variants={fieldV}
-                className="mb-12 flex items-center gap-4 border-b border-[rgba(0,51,0,0.12)] pb-6"
+                className="mb-12 flex items-center gap-4 border-b border-[rgba(16,28,46,0.12)] pb-6"
               >
                 <p className="font-mono text-[0.68rem] uppercase tracking-eyebrow text-ink-soft">
                   CONTACT FORM
@@ -333,7 +332,7 @@ export default function InquiryForm() {
                 />
                 <Field
                   id="wcm-org"
-                  label="Organization / Family office"
+                  label="Organization"
                   value={form.org}
                   onChange={(v) => set('org', v)}
                   error={errors.org}
@@ -375,8 +374,8 @@ export default function InquiryForm() {
                         role="radiogroup"
                         aria-label="Region"
                         className={cn(
-                          'relative grid grid-cols-3 rounded-full border p-1 transition-colors duration-300',
-                          errors.region ? 'border-forest-700' : 'border-[rgba(0,51,0,0.2)]',
+                          'relative grid grid-cols-2 rounded-full border p-1 transition-colors duration-300 sm:grid-cols-4',
+                          errors.region ? 'border-forest-700' : 'border-[rgba(16,28,46,0.2)]',
                         )}
                       >
                         {REGIONS.map((r) => {
@@ -425,7 +424,7 @@ export default function InquiryForm() {
                     <div
                       role="radiogroup"
                       aria-label="Investor type"
-                      className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3"
+                      className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2"
                     >
                       {INVESTOR_TYPES.map((t) => {
                         const active = form.investorType === t.id
@@ -439,10 +438,10 @@ export default function InquiryForm() {
                               className={cn(
                                 'relative block w-full rounded-[2px] border p-5 text-left transition-all duration-500 ease-out-expo',
                                 active
-                                  ? 'border-green-500 bg-mint-100/50 shadow-[inset_0_0_0_1px_#009900]'
+                                  ? 'border-green-500 bg-mint-100/50 shadow-[inset_0_0_0_1px_#C9A24A]'
                                   : errors.investorType
                                     ? 'border-forest-700/60 bg-ivory-dim hover:border-forest-700'
-                                    : 'border-[rgba(0,51,0,0.12)] bg-ivory-dim hover:border-[rgba(0,51,0,0.35)]',
+                                    : 'border-[rgba(16,28,46,0.12)] bg-ivory-dim hover:border-[rgba(16,28,46,0.35)]',
                               )}
                             >
                               <AnimatePresence>
@@ -457,7 +456,7 @@ export default function InquiryForm() {
                                     <svg width="10" height="8" viewBox="0 0 10 8" fill="none" aria-hidden>
                                       <motion.path
                                         d="M1 4L3.5 6.5L9 1"
-                                        stroke="#001400"
+                                        stroke="#08111E"
                                         strokeWidth="1.5"
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -513,13 +512,13 @@ export default function InquiryForm() {
                             ? 'border-green-500 bg-green-500'
                             : errors.ack
                               ? 'border-forest-700'
-                              : 'border-[rgba(0,51,0,0.35)] group-hover:border-forest-700',
+                              : 'border-[rgba(16,28,46,0.35)] group-hover:border-forest-700',
                         )}
                       >
                         <svg width="11" height="9" viewBox="0 0 11 9" fill="none">
                           <motion.path
                             d="M1 4.5L4 7.5L10 1"
-                            stroke="#001400"
+                            stroke="#08111E"
                             strokeWidth="1.6"
                             strokeLinecap="round"
                             strokeLinejoin="round"

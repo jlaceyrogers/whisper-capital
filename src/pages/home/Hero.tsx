@@ -4,6 +4,7 @@ import { scrollToTarget } from '@/lib/lenis'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import VoiceprintStatic from '@/pages/home/VoiceprintStatic'
 import type { VoiceprintShared } from '@/pages/home/Voiceprint'
+import Wordmark from '@/components/Wordmark'
 
 const Voiceprint = lazy(() => import('@/pages/home/Voiceprint'))
 
@@ -30,11 +31,12 @@ const GRAIN =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E\")"
 
 const SUBHEAD_LINES = [
-  'Whisper Capital Management runs two engines',
-  'under one roof — a fundamental long/short',
-  'alpha book and a catalyst-driven activist',
-  'division — built for family offices across',
-  'APAC, the Middle East, and Europe.',
+  'Whisper Capital Management is a fundamental',
+  'long/short hedge fund focused on small- and',
+  'mid-capitalization US equities. Our research is',
+  'bottom-up and company-by-company, concentrated',
+  'in the part of the market where coverage is thin',
+  'and mispricings persist.',
 ]
 
 export default function Hero({ revealed }: { revealed: boolean }) {
@@ -186,7 +188,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
 
       {/* The Baseline — system hairline at 58vh (64vh on mobile) */}
       <div data-axis-wrap className="absolute inset-x-0 top-[64%] md:top-[58%]" aria-hidden>
-        <div data-axis className="h-px w-full origin-left scale-x-0 bg-[rgba(102,204,102,0.14)]" />
+        <div data-axis className="h-px w-full origin-left scale-x-0 bg-[rgba(212,172,82,0.14)]" />
       </div>
 
       {/* B. Axis labels — engine names pinned to the swell centers */}
@@ -202,7 +204,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
         <span data-instrument className="flex items-center gap-2 opacity-0">
           <span aria-hidden className="h-[6px] w-px bg-mint-400" />
           <span className="font-mono text-[0.6rem] uppercase tracking-nav text-fog md:text-[0.68rem]">
-            02 — The Activist Division
+            02 — The Engagement Division
           </span>
         </span>
       </div>
@@ -211,14 +213,17 @@ export default function Hero({ revealed }: { revealed: boolean }) {
       <div className="relative z-10 mx-auto w-full max-w-container flex-1 px-5 pb-24 pt-[120px] md:px-12 lg:absolute lg:inset-0 lg:pb-0 lg:pt-0">
         {/* C. Wordmark context block */}
         <div data-zone="c" className="lg:absolute lg:left-12 lg:top-[120px] lg:max-w-md">
+          <div data-kicker className="mb-10 opacity-0">
+            <Wordmark size="lg" />
+          </div>
           <div className="flex items-center gap-4">
             <span data-kicker-line className="h-px w-10 origin-left scale-x-0 bg-mint-400" />
             <span className="font-mono text-[0.72rem] font-medium uppercase tracking-eyebrow text-mint-400">
-              <span data-kicker className="opacity-0">[ 00 — A Dual-Engine Investment Firm ]</span>
+              <span data-kicker className="opacity-0">[ A Dual-Engine Investment Firm ]</span>
             </span>
           </div>
           <p data-kicker className="mt-4 font-sans text-[0.8rem] font-bold uppercase tracking-wordmark text-fog opacity-0">
-            Whisper Capital Management — New York
+            Whisper Capital Management — Miami
           </p>
         </div>
 
@@ -247,7 +252,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
         <span className="font-mono text-[0.68rem] uppercase tracking-nav text-fog [writing-mode:vertical-rl]">
           Scroll
         </span>
-        <span className="relative h-12 w-px bg-[rgba(102,204,102,0.2)]">
+        <span className="relative h-12 w-px bg-[rgba(212,172,82,0.2)]">
           <span className="absolute left-1/2 top-0 h-1.5 w-1.5 -translate-x-1/2 animate-scroll-dot rounded-full bg-mint-400" />
         </span>
       </button>

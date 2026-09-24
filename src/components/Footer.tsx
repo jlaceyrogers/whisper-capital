@@ -1,43 +1,37 @@
 import { Link } from 'react-router'
+import Wordmark from '@/components/Wordmark'
 
 const NAV = [
   { to: '/', num: '00', label: 'Home' },
   { to: '/contact', num: '01', label: 'Contact' },
 ]
 
-const PROVIDERS = ['SS&C Technologies', 'Tannenbaum Helpern', 'White & Case', 'Kasowitz Benson Torres', 'CohnReznick']
-
 /**
  * Global footer (design.md §7.2) — forest-1000 base, giant cropped wordmark,
- * 4-column info row, compliance block, legal strip.
+ * 3-column info row, compliance block, legal strip.
  */
 export default function Footer() {
   return (
-    <footer className="border-t border-[rgba(102,204,102,0.14)] bg-forest-1000">
+    <footer className="border-t border-[rgba(212,172,82,0.14)] bg-forest-1000">
       {/* Row 1 — giant cropped wordmark */}
       <div className="overflow-hidden" aria-hidden>
         <div
           data-footer-wordmark
-          className="select-none whitespace-nowrap text-center font-serif text-[clamp(4rem,14vw,10rem)] font-light leading-[0.8] text-[rgba(102,204,102,0.10)]"
+          className="select-none whitespace-nowrap text-center font-serif text-[clamp(4rem,14vw,10rem)] font-light leading-[0.8] text-[rgba(212,172,82,0.10)]"
           style={{ transform: 'translateY(0.18em)' }}
         >
           WHISPER
         </div>
       </div>
 
-      {/* Row 2 — 4 columns */}
-      <div className="mx-auto grid max-w-container grid-cols-1 gap-12 px-5 pb-16 pt-8 md:grid-cols-2 md:px-12 lg:grid-cols-4">
+      {/* Row 2 — 3 columns */}
+      <div className="mx-auto grid max-w-container grid-cols-1 gap-12 px-5 pb-16 pt-8 md:grid-cols-2 md:px-12 lg:grid-cols-3">
         <div>
-          <div className="flex items-center gap-3">
-            <img src="/logo.svg" alt="" className="h-6 w-6" />
-            <span className="font-sans text-[0.75rem] font-bold uppercase tracking-wordmark text-white">
-              Whisper Capital
-            </span>
-          </div>
+          <Wordmark size="sm" />
           <p className="mt-5 font-mono text-[0.72rem] uppercase tracking-nav text-fog">
             A Dual-Engine Investment Firm
           </p>
-          <p className="mt-2 font-mono text-[0.72rem] uppercase tracking-nav text-fog/60">New York</p>
+          <p className="mt-2 font-mono text-[0.72rem] uppercase tracking-nav text-fog/60">Miami</p>
         </div>
 
         <div>
@@ -67,18 +61,10 @@ export default function Footer() {
                 ir@whispercapital.example
               </a>
             </li>
-            <li className="uppercase text-fog/70">APAC — Singapore</li>
-            <li className="uppercase text-fog/70">Middle East — Abu Dhabi</li>
-            <li className="uppercase text-fog/70">Europe — London</li>
-          </ul>
-        </div>
-
-        <div>
-          <p className="font-mono text-[0.68rem] uppercase tracking-eyebrow text-mint-400/70">Service Providers</p>
-          <ul className="mt-5 space-y-3 font-mono text-[0.72rem] uppercase tracking-nav text-fog/70">
-            {PROVIDERS.map((p) => (
-              <li key={p}>{p}</li>
-            ))}
+            <li className="uppercase text-fog/70">Miami</li>
+            <li className="uppercase text-fog/70">Milan</li>
+            <li className="uppercase text-fog/70">New York</li>
+            <li className="uppercase text-fog/70">London</li>
           </ul>
         </div>
       </div>
@@ -94,7 +80,7 @@ export default function Footer() {
       </div>
 
       {/* Row 4 — legal strip */}
-      <div className="mt-12 border-t border-[rgba(102,204,102,0.14)]">
+      <div className="mt-12 border-t border-[rgba(212,172,82,0.14)]">
         <div className="mx-auto flex max-w-container flex-col gap-3 px-5 py-6 font-mono text-[0.72rem] uppercase tracking-nav text-fog/60 md:flex-row md:items-center md:justify-between md:px-12">
           <span>© 2026 Whisper Capital Management LP</span>
           <span className="flex gap-6">

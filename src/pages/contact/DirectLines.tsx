@@ -4,7 +4,7 @@ import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 
 const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number]
 
-const REGIONS = ['APAC', 'MIDDLE EAST', 'EUROPE']
+const REGIONS = ['USA', 'APAC', 'MIDDLE EAST', 'EUROPE']
 
 /** Divider — vertical draw on desktop, horizontal draw on mobile. */
 function Divider() {
@@ -17,7 +17,7 @@ function Divider() {
         whileInView={{ scaleY: 1 }}
         viewport={{ once: true, margin: '-22% 0px' }}
         transition={{ duration: 0.8, ease: EASE, delay: 0.2 }}
-        className="hidden w-px origin-top self-stretch bg-[rgba(102,204,102,0.14)] lg:block"
+        className="hidden w-px origin-top self-stretch bg-[rgba(212,172,82,0.14)] lg:block"
       />
       <motion.span
         aria-hidden
@@ -25,7 +25,7 @@ function Divider() {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, margin: '-10% 0px' }}
         transition={{ duration: 0.8, ease: EASE }}
-        className="block h-px w-full origin-left bg-[rgba(102,204,102,0.14)] lg:hidden"
+        className="block h-px w-full origin-left bg-[rgba(212,172,82,0.14)] lg:hidden"
       />
     </>
   )
@@ -104,7 +104,7 @@ export default function DirectLines() {
 
           <Column index={2} className="flex-1 lg:pl-12">
             <p className={colLabel}>Headquarters</p>
-            <p className="mt-6 font-serif text-[1.4rem] font-medium text-white">New York</p>
+            <p className="mt-6 font-serif text-[1.4rem] font-medium text-white">Miami</p>
             <p className={colSub}>Meetings by appointment only</p>
           </Column>
         </div>

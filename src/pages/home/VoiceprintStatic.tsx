@@ -49,7 +49,7 @@ export default function VoiceprintStatic() {
       const yAt = (x: number) => waveY(x, T, h, p)
 
       // ruler ticks — every 64px, 6px above the baseline
-      c.strokeStyle = 'rgba(102,204,102,0.18)'
+      c.strokeStyle = 'rgba(212,172,82,0.18)'
       c.lineWidth = 1
       c.beginPath()
       for (let tx = 0; tx <= w; tx += 64) {
@@ -58,7 +58,7 @@ export default function VoiceprintStatic() {
       }
       c.stroke()
       // taller 14px ticks at the swell centers
-      c.strokeStyle = 'rgba(102,204,102,0.3)'
+      c.strokeStyle = 'rgba(212,172,82,0.3)'
       c.beginPath()
       for (const sx of [p.swell1, p.swell2]) {
         c.moveTo(sx * w + 0.5, baseY)
@@ -68,8 +68,8 @@ export default function VoiceprintStatic() {
 
       // echo — mirrored, compressed x0.35, fading over 96px below the baseline
       const grad = c.createLinearGradient(0, baseY, 0, baseY + 96)
-      grad.addColorStop(0, 'rgba(102,204,102,0.12)')
-      grad.addColorStop(1, 'rgba(102,204,102,0)')
+      grad.addColorStop(0, 'rgba(212,172,82,0.12)')
+      grad.addColorStop(1, 'rgba(212,172,82,0)')
       c.strokeStyle = grad
       c.beginPath()
       for (let i = 0; i <= 480; i++) {
@@ -80,7 +80,7 @@ export default function VoiceprintStatic() {
       }
       c.stroke()
 
-      // main trace — per-segment stroke, lerping toward #ccffcc in the swells
+      // main trace — per-segment stroke, lerping toward #F3E4B8 in the swells
       const N = 480
       c.lineWidth = 1
       for (let i = 0; i < N; i++) {
@@ -90,9 +90,9 @@ export default function VoiceprintStatic() {
         const g1 = Math.exp(-(((xm - p.swell1) / 0.085) ** 2))
         const g2 = Math.exp(-(((xm - p.swell2) / 0.06) ** 2))
         const m = Math.min(1, Math.max(g1, g2) * 0.8)
-        const r = Math.round(102 + (204 - 102) * m)
-        const g = Math.round(204 + (255 - 204) * m)
-        const b = Math.round(102 + (255 - 102) * m)
+        const r = Math.round(212 + (243 - 212) * m)
+        const g = Math.round(172 + (228 - 172) * m)
+        const b = Math.round(82 + (184 - 82) * m)
         c.strokeStyle = `rgba(${r},${g},${b},0.55)`
         c.beginPath()
         c.moveTo(x0 * w, baseY - yAt(x0))
@@ -100,8 +100,8 @@ export default function VoiceprintStatic() {
         c.stroke()
       }
 
-      // crest markers — 2px #66cc66 ticks from crest to baseline
-      c.strokeStyle = '#66cc66'
+      // crest markers — 2px #D4AC52 ticks from crest to baseline
+      c.strokeStyle = '#D4AC52'
       c.lineWidth = 2
       const markers: Array<[number, number]> = [
         [crestX(p.swell1, 140, 1.1, T), 1],
@@ -170,9 +170,9 @@ export default function VoiceprintStatic() {
           preserveAspectRatio="none"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
         >
-          <path d={svg.ticks} stroke="rgba(102,204,102,0.18)" strokeWidth="1" fill="none" />
-          <path d={svg.echo} stroke="rgba(102,204,102,0.12)" strokeWidth="1" fill="none" />
-          <path d={svg.trace} stroke="rgba(102,204,102,0.55)" strokeWidth="1" fill="none" />
+          <path d={svg.ticks} stroke="rgba(212,172,82,0.18)" strokeWidth="1" fill="none" />
+          <path d={svg.echo} stroke="rgba(212,172,82,0.12)" strokeWidth="1" fill="none" />
+          <path d={svg.trace} stroke="rgba(212,172,82,0.55)" strokeWidth="1" fill="none" />
         </svg>
       )}
     </div>

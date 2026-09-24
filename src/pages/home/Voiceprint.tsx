@@ -39,8 +39,8 @@ const fragmentShader = /* glsl */ `
   uniform vec2 uSwell;      // swell centers (normalized x)
   uniform float uAmpScale;
 
-  const vec3 MINT = vec3(0.4, 0.8, 0.4);     // #66cc66
-  const vec3 MINT100 = vec3(0.8, 1.0, 0.8);  // #ccffcc
+  const vec3 MINT = vec3(0.831, 0.675, 0.322);   // #D4AC52
+  const vec3 MINT100 = vec3(0.953, 0.894, 0.722); // #F3E4B8
 
   float hash1(float n) { return fract(sin(n) * 43758.5453123); }
   float vnoise(float x) {
@@ -135,7 +135,7 @@ const fragmentShader = /* glsl */ `
     over(acc, MINT, crestTick(uSwell.x, 140.0, 1.1, g1 * bloom(uSwell.x), px, baseY, t) * 0.9 * reveal);
     over(acc, MINT, crestTick(uSwell.y, 46.0, 0.5, g2 * bloom(uSwell.y) * activistPulse(t), px, baseY, t) * 0.9 * reveal);
 
-    // pen nib — 3px #ccffcc dot riding the leading point
+    // pen nib — 3px #F3E4B8 dot riding the leading point
     float n1;
     float n2;
     float ny = waveY(clamp(uEntry, 0.0, 1.0), t, n1, n2);

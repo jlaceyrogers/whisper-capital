@@ -5,32 +5,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Fiscal Forest — user palette
+        // Navy / Gold / Cream — from the Company & Strategy Snapshot deck
         forest: {
-          1000: '#001400',
-          950: '#002200',
-          900: '#003300',
-          800: '#004d00',
-          700: '#006600',
-          600: '#008000',
+          1000: '#08111E',
+          950: '#0C1727',
+          900: '#101C2E',
+          800: '#172740',
+          700: '#1F3556',
+          600: '#2A4670',
         },
         green: {
-          500: '#009900',
+          500: '#C9A24A',
         },
         mint: {
-          400: '#66cc66',
-          200: '#99e699',
-          100: '#ccffcc',
+          400: '#D4AC52',
+          200: '#E6CB86',
+          100: '#F3E4B8',
         },
         ivory: {
-          DEFAULT: '#FAF7EF',
-          dim: '#F1EEE2',
+          DEFAULT: '#F4EFE3',
+          dim: '#ECE6D6',
         },
         ink: {
-          DEFAULT: '#0B1A0B',
-          soft: '#33473A',
+          DEFAULT: '#0B1524',
+          soft: '#3B4A60',
         },
-        fog: '#A8BFA9',
+        fog: '#A9B4C6',
         // shadcn tokens (kept for ui/* components)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -111,7 +111,7 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        float: '0 24px 80px rgba(0,20,0,0.35)',
+        float: '0 24px 80px rgba(8,17,30,0.35)',
       },
       keyframes: {
         "accordion-down": {

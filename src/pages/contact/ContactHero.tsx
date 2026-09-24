@@ -35,7 +35,7 @@ export default function ContactHero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[65%]"
         style={{
           background:
-            'radial-gradient(ellipse 55% 60% at 50% 100%, rgba(102,204,102,0.05) 0%, transparent 70%)',
+            'radial-gradient(ellipse 55% 60% at 50% 100%, rgba(212,172,82,0.05) 0%, transparent 70%)',
         }}
       />
       {/* gentle vignette so the texture melts into forest-950 */}
@@ -44,7 +44,7 @@ export default function ContactHero() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 95% 85% at 50% 40%, transparent 45%, rgba(0,34,0,0.6) 100%)',
+            'radial-gradient(ellipse 95% 85% at 50% 40%, transparent 45%, rgba(12,23,39,0.6) 100%)',
         }}
       />
 
@@ -98,8 +98,7 @@ export default function ContactHero() {
           transition={{ duration: 0.9, ease: EASE, delay: 0.55 }}
           className="mx-auto mt-8 max-w-[48ch] font-sans text-lede text-fog"
         >
-          We speak with a limited number of family offices and qualified investors. Tell us who you
-          are; we respond personally, usually within two business days.
+          Tell us who you are; we respond personally.
         </motion.p>
 
         <motion.p

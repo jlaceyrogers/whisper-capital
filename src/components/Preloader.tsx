@@ -77,7 +77,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
         <span ref={counterRef} className="font-mono text-[4rem] font-medium leading-none text-mint-400">
           000
         </span>
-        <div className="h-px w-[160px] bg-[rgba(102,204,102,0.15)]">
+        <div className="h-px w-[160px] bg-[rgba(212,172,82,0.15)]">
           <div ref={fillRef} className="h-full w-full origin-left scale-x-0 bg-mint-400" />
         </div>
       </div>

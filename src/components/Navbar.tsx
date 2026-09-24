@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import Wordmark from '@/components/Wordmark'
 
 function NavItem({ to, label, onClick }: { to: string; label: string; onClick?: () => void }) {
   return (
@@ -78,16 +79,13 @@ export default function Navbar() {
         className={cn(
           'fixed inset-x-0 top-0 z-[100] h-20 transition-all duration-500 ease-out-expo',
           scrolled
-            ? 'border-b border-[rgba(102,204,102,0.14)] bg-[rgba(0,20,0,0.72)] backdrop-blur-[16px]'
+            ? 'border-b border-[rgba(212,172,82,0.14)] bg-[rgba(8,17,30,0.72)] backdrop-blur-[16px]'
             : 'border-b border-transparent bg-transparent',
         )}
       >
         <div className="mx-auto flex h-full max-w-container items-center justify-between px-5 md:px-12">
-          <Link to="/" className="flex items-center gap-3" aria-label="Whisper Capital — home">
-            <img src="/logo.svg" alt="" className="h-7 w-7" />
-            <span className="font-sans text-[0.8rem] font-bold uppercase tracking-wordmark text-white">
-              Whisper Capital
-            </span>
+          <Link to="/" className="flex items-center" aria-label="Whisper Capital Management — home">
+            <Wordmark size="sm" />
           </Link>
 
           <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
