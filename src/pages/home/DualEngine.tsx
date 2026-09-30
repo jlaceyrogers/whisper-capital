@@ -7,7 +7,7 @@ const CARDS = [
   {
     tag: 'FUNDAMENTAL LONG/SHORT',
     title: 'Alpha Book',
-    body: 'Fundamental long/short in U.S. small- and mid-cap equities. A concentrated book of longs and shorts across multiple sectors, identified through a proprietary research process.',
+    body: 'Fundamental long/short in U.S. small- and mid-cap equities. A concentrated book of longs and shorts across multiple sectors, identified through our proprietary research process.',
   },
   {
     tag: 'CATALYST-DRIVEN ENGAGEMENT',
