@@ -127,7 +127,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
           n.classList.remove('opacity-0'),
         )
         el.querySelectorAll('[data-axis], [data-kicker-line]').forEach((n) => n.classList.remove('scale-x-0'))
-        el.querySelectorAll('[data-sub] > span > span').forEach((n) => n.classList.remove('translate-y-full'))
+        el.querySelectorAll('[data-sub] > span > span').forEach((n) => n.classList.remove('lg:translate-y-full'))
         return
       }
       ctxRef.current = gsap.context(() => {
@@ -137,16 +137,16 @@ export default function Hero({ revealed }: { revealed: boolean }) {
           .fromTo('[data-axis]', { scaleX: 0 }, { scaleX: 1, duration: 2.2 }, 0)
           .fromTo('[data-kicker-line]', { scaleX: 0 }, { scaleX: 1, duration: 0.8 }, 0.2)
           .fromTo('[data-kicker]', { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.2)
-          .fromTo('[data-sub] > span > span', { y: '110%' }, { y: 0, duration: 1.1, stagger: 0.09 }, 2.5)
+          .fromTo('[data-sub] > span > span', { y: '110%' }, { y: 0, duration: 0.9, stagger: 0.06 }, 0.7)
           .fromTo(
             '[data-instrument]',
             { y: 12, opacity: 0 },
             { y: 0, opacity: 1, duration: 0.6, stagger: 0.08 },
-            2.8,
+            1.2,
           )
-          .fromTo('[data-scroll-cue]', { opacity: 0 }, { opacity: 1, duration: 0.8 }, 3.0)
-          // t=3.9 — entry complete; only now arm the scroll-out triggers
-          .call(startScrollOut, [], 3.9)
+          .fromTo('[data-scroll-cue]', { opacity: 0 }, { opacity: 1, duration: 0.8 }, 1.5)
+          // t=2.4 — entry complete; only now arm the scroll-out triggers
+          .call(startScrollOut, [], 2.4)
       }, el)
     }
 
@@ -187,23 +187,23 @@ export default function Hero({ revealed }: { revealed: boolean }) {
       )}
 
       {/* The Baseline — system hairline at 58vh (64vh on mobile) */}
-      <div data-axis-wrap className="absolute inset-x-0 top-[64%] md:top-[58%]" aria-hidden>
+      <div data-axis-wrap className="absolute inset-x-0 top-[80%] md:top-[58%]" aria-hidden>
         <div data-axis className="h-px w-full origin-left scale-x-0 bg-[rgba(212,172,82,0.14)]" />
       </div>
 
       {/* B. Axis labels — engine names pinned to the swell centers */}
-      <div className="absolute left-[30vw] top-[calc(64%+10px)] z-10 -translate-x-1/2 md:left-[34vw] md:top-[calc(58%+10px)]">
+      <div className="absolute left-[30vw] top-[calc(80%+10px)] z-10 w-[48vw] -translate-x-1/2 md:left-[34vw] md:top-[calc(58%+10px)] md:w-auto">
         <span data-instrument className="flex items-center gap-2 opacity-0">
           <span aria-hidden className="h-[6px] w-px bg-mint-400" />
-          <span className="font-mono text-[0.6rem] uppercase tracking-nav text-fog md:text-[0.68rem]">
+          <span className="text-center font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog md:text-left md:text-[0.68rem] md:tracking-nav">
             01 — The Alpha Book
           </span>
         </span>
       </div>
-      <div className="absolute left-[72vw] top-[calc(64%+10px)] z-10 -translate-x-1/2 max-[360px]:top-[calc(64%+24px)] md:left-[71vw] md:top-[calc(58%+10px)]">
+      <div className="absolute left-[72vw] top-[calc(80%+10px)] z-10 w-[48vw] -translate-x-1/2 md:left-[71vw] md:top-[calc(58%+10px)] md:w-auto">
         <span data-instrument className="flex items-center gap-2 opacity-0">
           <span aria-hidden className="h-[6px] w-px bg-mint-400" />
-          <span className="font-mono text-[0.6rem] uppercase tracking-nav text-fog md:text-[0.68rem]">
+          <span className="text-center font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog md:text-left md:text-[0.68rem] md:tracking-nav">
             02 — The Special Situation Division
           </span>
         </span>
@@ -213,7 +213,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
       <div className="relative z-10 mx-auto w-full max-w-container flex-1 px-5 pb-24 pt-[120px] md:px-12 lg:absolute lg:inset-0 lg:pb-0 lg:pt-0">
         {/* C. Wordmark context block */}
         <div data-zone="c" className="lg:absolute lg:left-12 lg:top-[120px] lg:max-w-md">
-          <div data-kicker className="mb-10 opacity-0">
+          <div data-kicker className="mb-6 opacity-0 md:mb-10">
             <Wordmark size="lg" />
           </div>
           <div className="flex items-center gap-4">
@@ -228,12 +228,12 @@ export default function Hero({ revealed }: { revealed: boolean }) {
         </div>
 
         {/* E — centred beneath the axis on desktop */}
-        <div className="relative mt-14 flex justify-center lg:absolute lg:inset-x-12 lg:top-[calc(58%+64px)] lg:mt-0">
+        <div className="relative mt-8 flex justify-center lg:absolute lg:inset-x-12 lg:top-[calc(58%+64px)] lg:mt-0">
           {/* E. Subhead */}
-          <p data-zone="e" data-sub className="mt-8 max-w-full text-center font-sans text-lede text-fog lg:mt-0 lg:max-w-[52ch]">
+          <p data-zone="e" data-sub className="max-w-full text-center font-sans text-lede text-fog lg:max-w-[52ch]">
             {SUBHEAD_LINES.map((line) => (
-              <span key={line} className="block overflow-hidden">
-                <span className="block translate-y-full">{line}</span>
+              <span key={line} className="lg:block lg:overflow-hidden">
+                <span className="lg:block lg:translate-y-full">{line}</span>{' '}
               </span>
             ))}
           </p>
@@ -246,7 +246,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
         type="button"
         data-scroll-cue
         onClick={() => scrollToTarget(window.innerHeight)}
-        className="absolute bottom-12 right-5 z-10 flex flex-col items-center gap-3 opacity-0 md:right-12"
+        className="absolute bottom-12 right-5 z-10 hidden flex-col items-center gap-3 opacity-0 md:right-12 md:flex"
         aria-label="Scroll to next section"
       >
         <span className="font-mono text-[0.68rem] uppercase tracking-nav text-fog [writing-mode:vertical-rl]">

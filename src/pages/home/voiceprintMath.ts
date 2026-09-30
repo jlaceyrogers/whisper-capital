@@ -74,7 +74,7 @@ export function crestX(center: number, freq: number, speed: number, t: number): 
 export function waveParams(widthPx: number): WaveParams & { baseFracTop: number } {
   const desktop = widthPx >= 768
   return {
-    baseFracTop: desktop ? 0.58 : 0.64,
+    baseFracTop: desktop ? 0.58 : 0.8,
     swell1: desktop ? 0.34 : 0.3,
     swell2: desktop ? 0.71 : 0.72,
     ampScale: desktop ? 1 : 0.6,

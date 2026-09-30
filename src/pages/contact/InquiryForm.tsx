@@ -374,7 +374,7 @@ export default function InquiryForm() {
                         role="radiogroup"
                         aria-label="Region"
                         className={cn(
-                          'relative grid grid-cols-2 rounded-full border p-1 transition-colors duration-300 sm:grid-cols-4',
+                          'relative grid grid-cols-2 rounded-[24px] border p-1 transition-colors duration-300 sm:grid-cols-4 sm:rounded-full',
                           errors.region ? 'border-forest-700' : 'border-[rgba(16,28,46,0.2)]',
                         )}
                       >

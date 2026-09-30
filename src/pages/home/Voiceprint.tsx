@@ -157,6 +157,7 @@ function Trace({ shared }: { shared: MutableRefObject<VoiceprintShared> }) {
   const pointer = useRef({ x: -10, initialized: false })
   const target = useRef(-10)
   const coarse = useRef(false)
+  const layout = useRef({ baseY: 0.42, swellX: 0.34, swellY: 0.71, amp: 1 })
 
   const uniforms = useMemo(
     () => ({
@@ -178,9 +179,9 @@ function Trace({ shared }: { shared: MutableRefObject<VoiceprintShared> }) {
     const mq = window.matchMedia('(min-width: 768px)')
     const apply = () => {
       const d = mq.matches
-      uniforms.uBaseY.value = d ? 0.42 : 0.36
-      uniforms.uSwell.value.set(d ? 0.34 : 0.3, d ? 0.71 : 0.72)
-      uniforms.uAmpScale.value = d ? 1 : 0.6
+      layout.current = d
+        ? { baseY: 0.42, swellX: 0.34, swellY: 0.71, amp: 1 }
+        : { baseY: 0.2, swellX: 0.3, swellY: 0.72, amp: 0.6 }
     }
     apply()
     mq.addEventListener('change', apply)
@@ -202,6 +203,9 @@ function Trace({ shared }: { shared: MutableRefObject<VoiceprintShared> }) {
     state.gl.getDrawingBufferSize(sizeRef.current)
     mat.uniforms.uRes.value.copy(sizeRef.current)
     mat.uniforms.uTime.value = state.clock.elapsedTime
+    mat.uniforms.uBaseY.value = layout.current.baseY
+    mat.uniforms.uSwell.value.set(layout.current.swellX, layout.current.swellY)
+    mat.uniforms.uAmpScale.value = layout.current.amp
     mat.uniforms.uEntry.value = shared.current.entry
     mat.uniforms.uScrollFade.value = shared.current.scrollFade
     if (!coarse.current) {
