@@ -227,10 +227,10 @@ export default function Hero({ revealed }: { revealed: boolean }) {
           </p>
         </div>
 
-        {/* E — right column locked to the axis on desktop */}
-        <div className="relative mt-14 flex flex-col lg:absolute lg:right-12 lg:top-[58%] lg:mt-0 lg:w-1/2 lg:items-end lg:text-right">
+        {/* E — centred beneath the axis on desktop */}
+        <div className="relative mt-14 flex justify-center lg:absolute lg:inset-x-12 lg:top-[calc(58%+64px)] lg:mt-0">
           {/* E. Subhead */}
-          <p data-zone="e" data-sub className="mt-8 max-w-full font-sans text-lede text-fog lg:max-w-[40ch]">
+          <p data-zone="e" data-sub className="mt-8 max-w-full text-center font-sans text-lede text-fog lg:mt-0 lg:max-w-[52ch]">
             {SUBHEAD_LINES.map((line) => (
               <span key={line} className="block overflow-hidden">
                 <span className="block translate-y-full">{line}</span>
