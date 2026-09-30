@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
+import texture from '@/assets/texture-contour.svg'
 
 const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number]
 
@@ -24,7 +25,7 @@ export default function ContactHero() {
     >
       {/* contour texture, 30% */}
       <img
-        src="/texture-contour.svg"
+        src={texture}
         alt=""
         aria-hidden
         className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"

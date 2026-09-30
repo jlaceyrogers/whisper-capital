@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import logo from '@/assets/logo.png'
 
 /**
  * Whisper Capital Management lockup — gold ring mark, wide-tracked serif
@@ -20,7 +21,7 @@ export default function Wordmark({
 
   return (
     <span className={cn('inline-flex items-center', s.gap, className)}>
-      <img src="/logo.svg" alt="" className={cn('shrink-0', s.mark)} />
+      <img src={logo} alt="" className={cn('shrink-0', s.mark)} />
       <span className="flex flex-col leading-none">
         <span className={cn('font-serif font-medium uppercase text-ivory', s.top)}>Whisper</span>
         <span className={cn('mt-[0.35em] font-sans font-medium uppercase text-mint-400', s.sub)}>
