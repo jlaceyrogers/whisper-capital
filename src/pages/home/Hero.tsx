@@ -35,7 +35,7 @@ const SUBHEAD_LINES = [
   'long/short hedge fund focused on small- and',
   'mid-capitalization US equities. Our research is',
   'bottom-up and company-by-company, concentrated',
-  'in the part of the market where coverage is thin',
+  'in the segment of the market where coverage is thin',
   'and mispricings persist.',
 ]
 
@@ -204,7 +204,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
         <span data-instrument className="flex items-center gap-2 opacity-0">
           <span aria-hidden className="h-[6px] w-px bg-mint-400" />
           <span className="font-mono text-[0.6rem] uppercase tracking-nav text-fog md:text-[0.68rem]">
-            02 — The Engagement Division
+            02 — The Special Situation Division
           </span>
         </span>
       </div>
