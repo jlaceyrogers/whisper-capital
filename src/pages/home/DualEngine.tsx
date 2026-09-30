@@ -11,8 +11,8 @@ const CARDS = [
   },
   {
     tag: 'CATALYST-DRIVEN ENGAGEMENT',
-    title: 'SPV Division',
-    body: 'Catalyst-driven engagement spanning both private and public markets.',
+    title: 'Special Situation',
+    body: 'Alongside the flagship fund, Whisper structures dedicated single-purpose vehicles for select opportunities that our research identifies but that are best held outside a diversified portfolio. Each vehicle is formed around one thesis, with its own capital and its own timeline, and is offered to qualified investors on a limited basis.',
   },
 ]
 
