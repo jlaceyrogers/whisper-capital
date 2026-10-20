@@ -59,28 +59,38 @@ export default function Hero({ revealed }: { revealed: boolean }) {
     const el = rootRef.current
     if (!el) return
     scrollCtxRef.current = gsap.context(() => {
-      // zones C/E: parallax up at 0.5×, fade out — kicker first, subhead last
-      const zones: Array<[string, number]> = [
-        ['[data-zone="c"]', 0.1],
-        ['[data-zone="e"]', 0.2],
-      ]
-      zones.forEach(([sel, offset]) => {
-        const zt = gsap.timeline({
+      // zone C: parallax up at 0.5× and fade
+      const ct = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: 'top top',
+          end: () => `+=${window.innerHeight}`,
+          scrub: 0.8,
+          invalidateOnRefresh: true,
+        },
+      })
+      ct.fromTo('[data-zone="c"]', { y: 0 }, { y: () => -window.innerHeight * 0.5, ease: 'none', duration: 1 }, 0).fromTo(
+        '[data-zone="c"]',
+        { opacity: 1 },
+        { opacity: 0, ease: 'none', duration: 0.6 },
+        0.1,
+      )
+      // zone E: fade out in place over the first 30vh — it never crosses the baseline
+      gsap.fromTo(
+        '[data-zone="e"]',
+        { opacity: 1 },
+        {
+          opacity: 0,
+          ease: 'none',
           scrollTrigger: {
             trigger: el,
             start: 'top top',
-            end: () => `+=${window.innerHeight}`,
+            end: () => `+=${window.innerHeight * 0.3}`,
             scrub: 0.8,
             invalidateOnRefresh: true,
           },
-        })
-        zt.fromTo(sel, { y: 0 }, { y: () => -window.innerHeight * 0.5, ease: 'none', duration: 1 }, 0).fromTo(
-          sel,
-          { opacity: 1 },
-          { opacity: 0, ease: 'none', duration: 0.6 },
-          offset,
-        )
-      })
+        },
+      )
       // waveform flattens and dims
       gsap.fromTo(
         shared.current,
@@ -97,7 +107,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
         },
       )
       // the ruled baseline persists, then fades over its last ~12vh
-      gsap.to('[data-axis-wrap]', {
+      gsap.to('[data-axis-wrap], [data-instrument]', {
         opacity: 0,
         ease: 'none',
         scrollTrigger: {
