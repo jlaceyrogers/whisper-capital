@@ -176,7 +176,7 @@ function Trace({ shared }: { shared: MutableRefObject<VoiceprintShared> }) {
   useEffect(() => {
     coarse.current = window.matchMedia('(pointer: coarse)').matches
     // desktop / mobile parameter sets, mirroring the DOM axis position
-    const mq = window.matchMedia('(min-width: 768px)')
+    const mq = window.matchMedia('(min-width: 1024px)')
     const apply = () => {
       const d = mq.matches
       layout.current = d

@@ -72,7 +72,7 @@ export function crestX(center: number, freq: number, speed: number, t: number): 
 
 /** Desktop vs mobile parameter sets (spec §2 / §7). */
 export function waveParams(widthPx: number): WaveParams & { baseFracTop: number } {
-  const desktop = widthPx >= 768
+  const desktop = widthPx >= 1024
   return {
     baseFracTop: desktop ? 0.58 : 0.8,
     swell1: desktop ? 0.34 : 0.3,

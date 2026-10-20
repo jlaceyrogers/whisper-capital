@@ -197,23 +197,23 @@ export default function Hero({ revealed }: { revealed: boolean }) {
       )}
 
       {/* The Baseline — system hairline at 58vh (64vh on mobile) */}
-      <div data-axis-wrap className="absolute inset-x-0 top-[80%] md:top-[58%]" aria-hidden>
+      <div data-axis-wrap className="absolute inset-x-0 top-[80%] lg:top-[58%]" aria-hidden>
         <div data-axis className="h-px w-full origin-left scale-x-0 bg-[rgba(212,172,82,0.14)]" />
       </div>
 
       {/* B. Axis labels — engine names pinned to the swell centers */}
-      <div className="absolute left-[30vw] top-[calc(80%+10px)] z-10 w-[48vw] -translate-x-1/2 md:left-[34vw] md:top-[calc(58%+10px)] md:w-auto">
+      <div className="absolute left-[30vw] top-[calc(80%+10px)] z-10 w-[48vw] -translate-x-1/2 lg:left-[34vw] lg:top-[calc(58%+10px)] lg:w-auto">
         <span data-instrument className="flex items-center gap-2 opacity-0">
           <span aria-hidden className="h-[6px] w-px bg-mint-400" />
-          <span className="text-center font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog md:text-left md:text-[0.68rem] md:tracking-nav">
+          <span className="text-center font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog lg:whitespace-nowrap lg:text-left lg:text-[0.68rem] lg:tracking-nav">
             01 — The Alpha Book
           </span>
         </span>
       </div>
-      <div className="absolute left-[72vw] top-[calc(80%+10px)] z-10 w-[48vw] -translate-x-1/2 md:left-[71vw] md:top-[calc(58%+10px)] md:w-auto">
+      <div className="absolute left-[72vw] top-[calc(80%+10px)] z-10 w-[48vw] -translate-x-1/2 lg:left-[71vw] lg:top-[calc(58%+10px)] lg:w-auto">
         <span data-instrument className="flex items-center gap-2 opacity-0">
           <span aria-hidden className="h-[6px] w-px bg-mint-400" />
-          <span className="text-center font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog md:text-left md:text-[0.68rem] md:tracking-nav">
+          <span className="text-center font-mono text-[0.6rem] uppercase tracking-[0.14em] text-fog lg:whitespace-nowrap lg:text-left lg:text-[0.68rem] lg:tracking-nav">
             02 — The Special Situation Division
           </span>
         </span>
@@ -223,7 +223,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
       <div className="relative z-10 mx-auto w-full max-w-container flex-1 px-5 pb-24 pt-[120px] md:px-12 lg:absolute lg:inset-0 lg:pb-0 lg:pt-0">
         {/* C. Wordmark context block */}
         <div data-zone="c" className="lg:absolute lg:left-12 lg:top-[120px] lg:max-w-md">
-          <div data-kicker className="mb-6 opacity-0 md:mb-10">
+          <div data-kicker className="mb-6 opacity-0 lg:mb-10">
             <Wordmark size="lg" />
           </div>
           <div className="flex items-center gap-4">
@@ -256,7 +256,7 @@ export default function Hero({ revealed }: { revealed: boolean }) {
         type="button"
         data-scroll-cue
         onClick={() => scrollToTarget(window.innerHeight)}
-        className="absolute bottom-12 right-5 z-10 hidden flex-col items-center gap-3 opacity-0 md:right-12 md:flex"
+        className="absolute bottom-12 right-5 z-10 hidden flex-col items-center gap-3 opacity-0 md:right-12 lg:flex"
         aria-label="Scroll to next section"
       >
         <span className="font-mono text-[0.68rem] uppercase tracking-nav text-fog [writing-mode:vertical-rl]">
